@@ -22,14 +22,14 @@ public class sumofSubEle {
          * }
          */
 
-        // APPROACH B
-        int subArr[] = new int[arr.length];
-        subArr[0] = arr[0];
+        // APPROACH B ----->
+        int prefixArr[] = new int[arr.length];
+        prefixArr[0] = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            subArr[i] = subArr[i - 1] + arr[i];
+            prefixArr[i] = prefixArr[i - 1] + arr[i];
         }
         /*
-         * for (int num : subArr) {
+         * for (int num : prefixArr) {
          * System.out.print(num + " ");
          * }
          */
@@ -38,14 +38,26 @@ public class sumofSubEle {
             for (int j = i; j < arr.length; j++) {
                 int sum = 0;
                 if (i == 0) {
-                    System.out.println(subArr[j]);
+                    System.out.println(prefixArr[j]);
                 } else {
-                    sum = sum + (subArr[j] - subArr[i - 1]);
+                    sum = sum + (prefixArr[j] - prefixArr[i - 1]);
                 }
                 if (i != 0) {
                     System.out.println(sum);
                 }
             }
         }
+
+        // APRROACH C---->
+        int arr1[] = new int[] { 2, 4, 1, 3 };
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                int sum = 0;
+                sum = sum + arr1[j];
+                System.out.print(sum);
+            }
+        }
+
+        // space complexity O(1) and time complexity O(N2)
     }
 }

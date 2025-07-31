@@ -27,5 +27,3 @@ This repository contains DSA problems and solutions written in Java as I learn a
 
 ---
 
-## 📂 Folder Structure
-

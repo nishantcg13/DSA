@@ -31,30 +31,43 @@ public class maxSubSum {
         // }
 
         // APPROACH USING PREFIX SUM
-        int prefArr[] = new int[arr.length];
-        prefArr[0] = arr[0];
+        // int prefArr[] = new int[arr.length];
+        // prefArr[0] = arr[0];
 
-        for (int i = 1; i < arr.length; i++) {
-            prefArr[i] = prefArr[i - 1] + arr[i];
-        }
+        // for (int i = 1; i < arr.length; i++) {
+        // prefArr[i] = prefArr[i - 1] + arr[i];
+        // }
 
         // for (int num : prefArr) {
         // System.out.print(num + " ");
         // }
+        // int sum = 0;
+        // for (int i = 0; i < arr.length; i++) {
+        // for (int j = i; j < arr.length; j++) {
+
+        // if (i == 0) {
+        // sum = prefArr[j];
+        // } else {
+        // sum = prefArr[j] - prefArr[i - 1];
+        // }
+        // if (sum > maxSum) {
+        // maxSum = sum;
+        // }
+        // }
+        // }
+
+        // APPROACH USING KADANE'S ALGORITHM: ----->
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
-
-                if (i == 0) {
-                    sum = prefArr[j];
-                } else {
-                    sum = prefArr[j] - prefArr[i - 1];
-                }
-                if (sum > maxSum) {
-                    maxSum = sum;
-                }
+            sum = sum + arr[i];
+            if (sum < 0) {
+                sum = 0;
+            }
+            if (sum > maxSum) {
+                maxSum = sum;
             }
         }
+
         System.out.println(maxSum);
     }
 }

@@ -8,8 +8,8 @@ This repository contains DSA problems and solutions written in Java as I learn a
 ## 📌 What You'll Find Here
 
 - ✅ Basic Java Programs
-- 🔄 Array Problems (Currently Learning)
-- ♾️ Recursion
+- 🔄 Array Problems 
+- ♾️ Recursion (Currently Learning)
 - ⏳ Coming Soon:
   - Strings
   - Sorting & Searching

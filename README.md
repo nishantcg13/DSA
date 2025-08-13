@@ -1,6 +1,6 @@
 # 📘 DSA in Java
 
-Welcome to my **Data Structures and Algorithms (DSA)** journey using Java!  
+Welcome to my **Data Structures and Algorithms (DSA)** journey using Java!!
 This repository contains DSA problems and solutions written in Java as I learn and grow my skills step by step.
 
 ---

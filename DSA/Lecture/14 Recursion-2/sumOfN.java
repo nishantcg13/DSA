@@ -9,6 +9,7 @@ public class sumOfN {
             return 0;
         }
         return num + fun(--num);
+        
     }
 }
  

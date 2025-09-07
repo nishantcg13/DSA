@@ -9,10 +9,11 @@ This repository contains DSA problems and solutions written in Java as I learn a
 
 - ✅ Basic Java Programs
 - 🔄 Array Problems 
-- ♾️ Recursion (Currently Learning)
+- ♾️ Recursion
+- 🔍 Searching
+- 📊 Sorting (Currently Learning)
 - ⏳ Coming Soon:
   - Strings
-  - Sorting & Searching
   - Linked List
   - Stack & Queue
   - Trees & Graphs

@@ -11,10 +11,10 @@ This repository contains DSA problems and solutions written in Java as I learn a
 - 🔄 Array Problems 
 - ♾️ Recursion
 - 🔍 Searching
-- 📊 Sorting (Currently Learning)
+- 📊 Sorting
+- 🔗 Linked List (Currently Learning)
 - ⏳ Coming Soon:
   - Strings
-  - Linked List
   - Stack & Queue
   - Trees & Graphs
 

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Node {
     int data;
     Node next = null;
@@ -127,6 +129,11 @@ class LinkedList {
                 temp = temp.next;
                 pos--;
             }
+
+            // for (int i = 1; i < pos - 1; i++) {
+            // temp = temp.next;
+            // }
+
             temp.next = temp.next.next;
         }
 
@@ -148,7 +155,7 @@ class LinkedList {
 
 public class Linked {
     public static void main(String[] args) {
-        // LinkedList ll = new LinkedList();
+        LinkedList ll = new LinkedList();
         // ll.addFirst(10);
         // ll.addFirst(20);
         // ll.addFirst(30);
@@ -177,6 +184,82 @@ public class Linked {
         // System.out.println();
         // ll.deleteAtPos(2);
         // ll.printSLL();
+
+        Scanner sc = new Scanner(System.in);
+        char ch;
+        do {
+            System.out.println("Enter your choice");
+            System.out.println("1.Add First");
+            System.out.println("2.Add Last");
+            System.out.println("3.Add At Position");
+            System.out.println("4.Delete First");
+            System.out.println("5.Delete Last");
+            System.out.println("6.Delete At Position");
+            System.out.println("7.Count Node");
+            System.out.println("8.Print Singly Linked List");
+            int choice = sc.nextInt();
+            int data;
+            switch (choice) {
+                case 1:
+
+                    System.out.println("Enter Data");
+                    data = sc.nextInt();
+                    ll.addFirst(data);
+                    break;
+
+                case 2:
+
+                    System.out.println("Enter Data");
+                    data = sc.nextInt();
+                    ll.addLast(data);
+                    break;
+
+                case 3:
+
+                    System.out.println("Enter Data");
+                    data = sc.nextInt();
+                    ll.addAtPos(choice, data);
+                    break;
+
+                case 4:
+
+                    ll.deleteFirst();
+                    break;
+
+                case 5:
+
+                    ll.deleteLast();
+                    break;
+
+                case 6:
+
+                    System.out.println("Enter Position");
+                    int pos = sc.nextInt();
+                    System.out.println("Enter Data");
+                    data = sc.nextInt();
+                    ll.addAtPos(pos, data);
+                    break;
+
+                case 7:
+
+                    System.out.println(ll.countNode());
+                    break;
+
+                case 8:
+
+                    ll.printSLL();
+                    System.out.println();
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            System.out.println("Do you want to continue? (y/n)");
+            ch = sc.next().charAt(0);
+        } while (ch == 'y' || ch == 'Y');
+        sc.close();
     }
 }
 

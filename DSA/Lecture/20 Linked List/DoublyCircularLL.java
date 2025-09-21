@@ -10,164 +10,154 @@ class Node {
     }
 }
 
-class DoublyLinkedList {
+class DoublyCircularLinkedList {
     Node head = null;
 
     void addFirst(int data) {
-
         Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-        } else {
-            newNode.next = head;
-            head.previous = newNode;
-            head = newNode;
-        }
-
-    }
-
-    void printSLL() {
 
         if (head == null) {
-            System.out.println("Linked List is Empty!!!");
+            head = newNode;
+            newNode.next = newNode;
+            newNode.previous = newNode;
         } else {
             Node temp = head;
-            while (temp.next != null) {
-                System.out.print(temp.data + "->");
-                temp = temp.next;
-            }
-            System.out.print(temp.data);
-            System.out.println();
+            head = newNode;
+            temp.previous = newNode;
+            temp.next.next = newNode;
+            head.previous = temp.next.next;
+            head.next = temp;
         }
-
     }
 
     void addLast(int data) {
-        Node newNode = new Node(data);
-
         if (head == null) {
             addFirst(data);
         } else {
             Node temp = head;
-
-            while (temp.next != null) {
+            while (temp.next != head) {
                 temp = temp.next;
             }
+
+            Node newNode = new Node(data);
             temp.next = newNode;
             newNode.previous = temp;
+            newNode.next = head;
+            head.previous = newNode;
         }
     }
 
     void addAtPos(int pos, int data) {
 
-        if (pos <= 0 || countNode() + 2 < pos) {
-            System.out.println("Wrong Input");
-            return;
-        }
-
-        if (pos == 1) {
+        if (head == null) {
             addFirst(data);
         } else if (pos == countNode() + 1) {
             addLast(data);
         } else {
-            Node newNode = new Node(data);
             Node temp = head;
-
+            Node newNode = new Node(data);
             while (pos - 2 != 0) {
-                temp = temp.next;
                 pos--;
+                temp = temp.next;
             }
-            newNode.previous = temp;
             newNode.next = temp.next;
             temp.next = newNode;
+            newNode.previous = temp;
             newNode.next.previous = newNode;
-
         }
-
     }
 
     void deleteFirst() {
+
         if (head == null) {
-            System.out.println("LinkedList already empty");
+            System.out.println("Linked List already empty");
         } else if (countNode() == 1) {
             head = null;
         } else {
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
             head = head.next;
-            head.previous = null;
+            temp.next = head;
+            head.previous = temp;
+
         }
+
     }
 
     void deleteLast() {
-        Node temp = head;
         if (head == null) {
-            System.out.println("LinkedList already empty");
+            System.out.println("Linked List already empty");
         } else if (countNode() == 1) {
             head = null;
         } else {
-            while (temp.next.next != null) {
+            Node temp = head;
+            while (temp.next.next != head) {
                 temp = temp.next;
             }
-            temp.next = null;
+
+            temp.next = head;
+            head.previous = temp;
         }
-
-        // while (temp.next != null) {
-        // temp = temp.next;
-        // }
-        // this is seccond way of writing the delete last code
-        // temp.previous.next = null;
-        // temp.previous = null;
-
-        // apan jo element delete karnar ahto llast cha tyacha prevois null karawa nahi
-        // kela tari to delete hotoch pn safer side and good coding practices sathi asa
-        // karava
-
     }
 
     void deleteAtPos(int pos) {
-        if (pos <= 0 || pos >= countNode() + 1) {
-            System.out.println("Invalid Position");
+
+        if (head == null) {
+            System.out.println("Linked List already empty");
             return;
         }
 
         if (pos == 1) {
             deleteFirst();
-        } else if (pos == countNode()) {
+        } else if (pos == countNode() + 1) {
             deleteLast();
         } else {
             Node temp = head;
+
             while (pos - 2 != 0) {
                 temp = temp.next;
                 pos--;
             }
 
             temp.next = temp.next.next;
-            temp.next.previous = temp;
-
+            temp.next.next.previous = temp;
         }
+
     }
 
     int countNode() {
-        Node temp = head;
         int count = 0;
+        Node temp = head;
+        if (null == head) {
+            return 0;
+        } else {
 
-        // if (temp == null) {
-        // return 0;
-        // }
-        // salgya companies sangtat ki asa liha karan ki ashyane tumcha code readable
-        // hoto ani nntr parat lavkar lakshyatt yeto and this is best coding practice
-
-        while (temp != null) {
-            count++;
-            temp = temp.next;
+            while (temp.next != head) {
+                temp = temp.next;
+                count++;
+            }
+            return count + 1;
         }
-        return count;
     }
 
+    void printDCLL() {
+        Node temp = head;
+
+        while (temp.next != head) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+
+        System.out.print(temp.data);
+        System.out.println();
+    }
 }
 
-public class DoublyLinked {
+public class DoublyCircularLL {
     public static void main(String[] args) {
-        DoublyLinkedList dll = new DoublyLinkedList();
+        DoublyCircularLinkedList scll = new DoublyCircularLinkedList();
         Scanner sc = new Scanner(System.in);
         char ch;
         do {
@@ -179,7 +169,7 @@ public class DoublyLinked {
             System.out.println("5.Delete Last");
             System.out.println("6.Delete At Position");
             System.out.println("7.Count Node");
-            System.out.println("8.Print Doubly Linked List");
+            System.out.println("8.Print Doubly Circular Linked List");
             int choice = sc.nextInt();
             int data;
             switch (choice) {
@@ -187,14 +177,14 @@ public class DoublyLinked {
 
                     System.out.println("Enter Data");
                     data = sc.nextInt();
-                    dll.addFirst(data);
+                    scll.addFirst(data);
                     break;
 
                 case 2:
 
                     System.out.println("Enter Data");
                     data = sc.nextInt();
-                    dll.addLast(data);
+                    scll.addLast(data);
                     break;
 
                 case 3:
@@ -202,36 +192,34 @@ public class DoublyLinked {
                     System.out.println("Enter Data");
                     int pos = sc.nextInt();
                     data = sc.nextInt();
-                    dll.addAtPos(pos, data);
+                    scll.addAtPos(pos, data);
                     break;
 
                 case 4:
 
-                    dll.deleteFirst();
+                    scll.deleteFirst();
                     break;
 
                 case 5:
 
-                    dll.deleteLast();
+                    scll.deleteLast();
                     break;
 
                 case 6:
 
-                    System.out.println("Enter Position");
+                    System.out.println("Enter position");
                     pos = sc.nextInt();
-                    System.out.println("Enter Data");
-                    data = sc.nextInt();
-                    dll.addAtPos(pos, data);
+                    scll.deleteAtPos(pos);
                     break;
 
                 case 7:
 
-                    System.out.println(dll.countNode());
+                    System.out.println(scll.countNode());
                     break;
 
                 case 8:
 
-                    dll.printSLL();
+                    scll.printDCLL();
                     System.out.println();
                     break;
 
@@ -246,5 +234,4 @@ public class DoublyLinked {
         System.out.println("Thank You!!!!!");
         sc.close();
     }
-
 }

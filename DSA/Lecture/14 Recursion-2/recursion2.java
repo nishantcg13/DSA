@@ -1,4 +1,4 @@
-public class recursion {
+public class recursion2 {
     public static void main(String[] args) {
         System.out.println("Start Main");
         int rec = fun(2);

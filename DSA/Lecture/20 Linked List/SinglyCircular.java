@@ -231,6 +231,7 @@ public class SinglyCircular {
             System.out.println("Do you want to continue? (y/n)");
             ch = sc.next().charAt(0);
         } while (ch == 'y' || ch == 'Y');
+        
         System.out.println("Thank You!!!!!");
         sc.close();
     }

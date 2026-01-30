@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../dsa1/Lecture">
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/1 Introduction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/10 SubArray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/11 SubArray 02 &amp; 2D Mat" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/12 2-D Matrices" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/13 Sliding Window &amp; Recursion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/14 Recursion-2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/15 Sorting" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/16 Searching &amp; Sorting" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/17 Sorting Algorithms" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/18 Sorting Algorithms" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/19 Quick Sort" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/2 Introduction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/20 Linked List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/23 Stacks" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/3 TimeComplexity" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/4 TimeComplexity" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/8 Carry Forward" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dsa1/Lecture/9 Equilibrium &amp; Subarray" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
